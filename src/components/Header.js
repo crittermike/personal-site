@@ -4,7 +4,7 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <p>Ramblings by Mike Crittenden</p>
+        <p>Ramblings and stuff. <a href="https://twitter.com/mcrittenden">Follow me on Twitter?</a></p><br /><br /><br />
       </div>
     )
   }

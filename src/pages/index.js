@@ -22,8 +22,8 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small>{node.Date}</small>
-              <p>{node.Subtitle}</p>
+              <p><small>({node.Date}) {node.Subtitle}</small></p>
+              <br /><br />
             </div>
           )
         })}

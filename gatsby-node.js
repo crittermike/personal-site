@@ -29,16 +29,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const posts = result.data.allAirtablePosts.edges;
 
         posts.forEach((post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
-
           createPage({
             path: 'ramblings/' + post.node.Slug,
             component: blogPost,
             context: {
               slug: post.node.Slug,
-              previous,
-              next,
             },
           })
         })

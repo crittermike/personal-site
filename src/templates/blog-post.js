@@ -3,13 +3,11 @@ import unified from 'unified';
 import markdown from 'remark-parse';
 import html from 'remark-html';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
 
 class BlogPostTemplate extends React.Component {
     render() {
         const post = this.props.data.airtablePosts;
         const siteTitle = this.props.data.site.siteMetadata.title;
-        const { previous, next } = this.props.pathContext;
 
         return (
             <div>
@@ -23,17 +21,6 @@ class BlogPostTemplate extends React.Component {
                             .processSync(post.Body)
                     }}
                 />
-                <hr />
-
-                <ul>
-                    {previous && (
-                        <li><Link to={previous.Slug} rel="prev">← {previous.Title}</Link></li>
-                    )}
-
-                    {next && (
-                        <li><Link to={next.Slug} rel="next">{next.Title} →</Link></li>
-                    )}
-                </ul>
             </div>
         )
     }

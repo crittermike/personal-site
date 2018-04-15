@@ -3,13 +3,18 @@ body {
     color: white;
     font-size: 125%;
     font-family: Josefin Sans, sans-serif;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 a {
     color: white;
     text-decoration: none;
-    border-bottom: 1px solid green;
+    border-bottom: 2px solid #FF5964;
+}
+
+a:hover {
+    border-bottom: 2px bottom #4E5166;
+    background: #FF5964;
 }
 
 .container {

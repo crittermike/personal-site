@@ -8,7 +8,7 @@ require("prismjs/themes/prism-tomorrow.css");
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
-    let header
+    let header, footer;
 
     let rootPath = `/`
     if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
@@ -22,12 +22,19 @@ class Template extends React.Component {
     } else {
       header = (
         <h3><Link to={'/'}>← Home</Link></h3>
-      )
+      );
+      footer = (
+        <div>
+          <h3><Link to={'/'}>← Home</Link></h3>
+          <p>Copyright &copy; Mike Crittenden</p>
+        </div>
+      );
     }
     return (
       <div className="container">
         {header}
         {children()}
+        {footer}
       </div>
     )
   }
